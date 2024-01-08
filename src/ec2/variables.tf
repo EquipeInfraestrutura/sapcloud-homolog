@@ -1,5 +1,17 @@
+variable "amiclient_id" {
+  type        = string
+  default     = "ami-0ee1b9f15bec6dde7"
+  description = "ami_id"
+}
+
+variable "amisql_id" {
+  type        = string
+  default     = "ami-02cb958d43e04f92d"
+  description = "ami_id"
+}
+
 variable "instance_count" {
-  default = "2"
+  default = "1"
   type    = string
 }
 
