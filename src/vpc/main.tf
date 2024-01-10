@@ -92,13 +92,10 @@ resource "aws_route_table_association" "public" {
 # Criação do Virtual Private Gateway
 
 resource "aws_vpn_gateway" "vpg_projetosap" {
-  type = "ipsec.1"
-  name = "vpc_projetosap"
-}
-
-resource "aws_vpn_connection" "connectionprojetosap" {
-  vpn_gateway_id = aws_vpn_gateway.vpg_projetosap.id
   vpc_id = aws_vpc.default.id
+  tags = {
+    Name = "vpc_projetossap"
+  }
 }
 
 # NAT resources: Isso criará 2 gateways NAT em 2 sub-redes públicas para 2 sub-redes privadas diferentes.
