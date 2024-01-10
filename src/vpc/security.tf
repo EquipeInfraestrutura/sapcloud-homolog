@@ -121,7 +121,8 @@ resource "aws_security_group" "sg_private" {
     protocol         = "-1"
     cidr_blocks      = ["172.36.0.0/24"]
   }
-    ingress {
+  
+  ingress {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
