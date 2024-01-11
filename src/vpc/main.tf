@@ -54,7 +54,7 @@ resource "aws_route_table" "public" {
     tags = {
      Name = "rt_public"
   }
-  depends_on = [aws_vpn_gateway.vpg_projetossap, aws_internet_gateway.default]
+  depends_on = [aws_vpn_gateway.vpg_projetosap, aws_internet_gateway.default]
 }
 
 resource "aws_route" "public" {
