@@ -1,7 +1,5 @@
 module "vpc" {
   source          = "./vpc"
-
-  vpg_projetossap_id = var.vpg_projetossap_id
 }
 
 module "ec2" {

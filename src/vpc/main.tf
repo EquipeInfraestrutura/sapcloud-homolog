@@ -10,11 +10,22 @@ resource "aws_vpc" "default" {
   }
 }
 
+# Criação do Internet Gateway
+
 resource "aws_internet_gateway" "default" {
   vpc_id = aws_vpc.default.id
 
   tags = {
     Name = "Igw_Projetos_1"
+  }
+}
+
+# Criação do Virtual Private Gateway
+
+resource "aws_vpn_gateway" "vpg_projetosap" {
+  vpc_id = aws_vpc.default.id
+  tags = {
+    Name = "vpc_projetossap"
   }
 }
 
@@ -87,15 +98,6 @@ resource "aws_route_table_association" "public" {
 
   subnet_id      = aws_subnet.public[count.index].id
   route_table_id = aws_route_table.public.id
-}
-
-# Criação do Virtual Private Gateway
-
-resource "aws_vpn_gateway" "vpg_projetosap" {
-  vpc_id = aws_vpc.default.id
-  tags = {
-    Name = "vpc_projetossap"
-  }
 }
 
 # NAT resources: Isso criará 2 gateways NAT em 2 sub-redes públicas para 2 sub-redes privadas diferentes.
