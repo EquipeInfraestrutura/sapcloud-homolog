@@ -22,8 +22,8 @@ variable "availability_zones" {
   description = "List of availability zones"
 }
 
-variable "gateway_ids" {
-  default     = ["vpg-projetossap-id", "igw-default-id"]
-  type        = list(string)
-  description = "Lista do internet gateway e virtual private gateway"
-}
+# variable "gateway_ids" {
+#   default     = ["vpg-projetossap-id", "igw-default-id"]
+#   type        = list(string)
+#   description = "Lista do internet gateway e virtual private gateway"
+# }
