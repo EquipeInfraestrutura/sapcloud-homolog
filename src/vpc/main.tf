@@ -26,7 +26,7 @@ resource "aws_vpn_gateway" "vpg_projetosap" {
   vpc_id = aws_vpc.default.id
   
   tags = {
-    Name = "vpc_projetossap"
+    Name = "vpc_projetosap"
   }
 }
 
@@ -60,7 +60,7 @@ resource "aws_route_table" "public" {
 resource "aws_route" "public" {
   route_table_id         = aws_route_table.public.id
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = "${aws_internet_gateway.default.id},${aws_vpn_gateway.vpg_projetosap.id}"
+  gateway_id             = aws_internet_gateway.default.id
 }
 
 resource "aws_subnet" "private" {
