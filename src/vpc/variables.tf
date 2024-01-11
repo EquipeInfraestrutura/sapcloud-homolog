@@ -23,7 +23,7 @@ variable "availability_zones" {
 }
 
 variable "gateway_ids" {
-  default     = ["aws_internet_gateway.default.id","aws_vpn_gateway.vpg_projetosap.id"]
+  default     = ["vpg-projetossap-id", "igw-default-id"]
   type        = list(string)
   description = "Lista do internet gateway e virtual private gateway"
 }
