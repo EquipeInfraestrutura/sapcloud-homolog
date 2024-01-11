@@ -21,3 +21,9 @@ variable "availability_zones" {
   type        = list
   description = "List of availability zones"
 }
+
+variable "gateway_ids" {
+  default     = ["aws_internet_gateway.default.id","aws_vpn_gateway.vpg_projetosap.id"]
+  type        = list(string)
+  description = "Lista do internet gateway e virtual private gateway"
+}
